@@ -1,0 +1,9 @@
+
+PIP_REQUIRE_VIRTUALENV=false
+
+conda env create --file environment.yaml
+#conda remove --name hal4schwab --all
+
+#conda env create --prefix ./env --file environment.yaml
+#conda remove --prefix ./env --all
+

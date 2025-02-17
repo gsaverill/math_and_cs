@@ -1,0 +1,315 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "637d828e-c213-4607-a7e7-dd05473c99be",
+   "metadata": {},
+   "source": [
+    "# Numbers"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d735d521-9698-4ccf-94bc-95ebdde55823",
+   "metadata": {},
+   "source": [
+    "## The Natural Numbers, $\\mathbb{N}$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f271e032-9a4b-4043-887d-141127649050",
+   "metadata": {},
+   "source": [
+    "Any of the positive whole numbers 1, 2, 3 ... is called a natural number or a counting number (or a whole number).  The natural numbers are used to count separate objects. The collection of all counting numbers {1, 2, 3, ...}, called the set of natural numbers, is denoted $\\mathbb{N}$.  Some mathematicians choose to include the number zero in this set.\n",
+    "\n",
+    "An infinite set of objects whose elements can be arranged in a list akin to the list of natural numbers is said to be countable.  Not all infinite sets are countable.\n",
+    "\n",
+    "[From the entry for **natural number** in the Encyclopedia of Mathematics, 2005, James Tanton.]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9a1c98a3-c97c-4660-ac8e-150858ec6ee7",
+   "metadata": {},
+   "source": [
+    "## The Integers, $\\mathbb{Z}$ "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1c5e2757-fb8b-47d1-870c-62d776617d65",
+   "metadata": {},
+   "source": [
+    "Any of the positive or negative whole numbers, or zero, is called an integer: ...,-3,-2,-1,0,1,2,3,...\n",
+    "The set of integers is denoted $\\mathbb{Z}$ (from the German word Zablen for \"numbers\").\n",
+    "\n",
+    "German mathematcian Georg Cantor (1845-1918) showed that the set of integers is countable.\n",
+    "\n",
+    "[From the entry for **integer** in the Encyclopedia of Mathematics, 2005, James Tanton.]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b8f0f9e5-bcbd-46d2-94cd-cc845f32b68b",
+   "metadata": {},
+   "source": [
+    "## The Rationals, $\\mathbb{Q}$ "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ee7c42fa-fdd8-4308-b87e-3ccc0e7fe92a",
+   "metadata": {},
+   "source": [
+    "Any number that can be expressed as a ratio, $\\Large\\frac{a}{b}$, of two integers a and b, with b not equal to zero, is called a rational number.  For example, $\\Large\\frac{2}{5}$ and $\\Large\\frac{-6}{2}$ (which is equivalent to -3) are rational numbers.  Every rational number is a fraction.  The set of all rational numbers is denoted $\\mathbb{Q}$ (for quotient, which means the result of dividing one integer by another).\n",
+    "\n",
+    "Any real number whose decimal representatioin eventially repeats in a cycle or terminates is a rational.\n",
+    "\n",
+    "Between any two rational numbers $\\Large\\frac{a}{b}$ and $\\Large\\frac{c}{d}$ lies another rational--their midpoint $\\Large\\frac{\\frac{a}{b} + \\frac{c}{d}}{2}$, for instance.  Infinitely many rational numbers lie between any two given rationals.\n",
+    "\n",
+    "Georg Cantor showed that the set of rational numbers is countable.\n",
+    "\n",
+    "[From the entry for **rational numbers** in the Encyclopedia of Mathematics, 2005, James Tanton.]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "38a0fc24-bcbf-48d7-a3fa-91ffdd24c4fe",
+   "metadata": {},
+   "source": [
+    "### Rational Example $\\large\\frac{a}{b} = \\large\\frac{3}{1}$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "1fe56063-46d7-4dd7-8a8e-79a5c85e2aeb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0.333330\n"
+     ]
+    }
+   ],
+   "source": [
+    "import decimal\n",
+    "D = decimal.Decimal\n",
+    "\n",
+    "with decimal.localcontext() as ctx:\n",
+    "    \n",
+    "    precision = 5            # desired total number of digits of precision\n",
+    "    accuracy = precision - 1 # number of decimal places to print\n",
+    "    accuracy = precision - 0 # number of decimal places to print\n",
+    "    accuracy = precision + 1 # number of decimal places to print\n",
+    "    \n",
+    "    ctx.prec = precision\n",
+    "    ctx.rounding = decimal.ROUND_FLOOR\n",
+    "    print_format_string = '{:.' + str(accuracy) + 'f}'\n",
+    "\n",
+    "    a = D(1)\n",
+    "    b = D(3)\n",
+    "    quotient = a/b\n",
+    "    \n",
+    "    print(print_format_string.format(quotient))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a17a7dff-8f30-4285-8841-5f6bdd8dd9d5",
+   "metadata": {},
+   "source": [
+    "## Irrational Numbers"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "244a1830-3799-4e73-ac4e-863ce998932c",
+   "metadata": {},
+   "source": [
+    "Any number that cannot be expressed as a ratio of two integers is called an irrational number.  The irrational numbers are precisly those nmbers whose decimal expansions do not terminate or fall into a repeating cycle.\n",
+    "\n",
+    "[From the entry for **irrational numbers** in the Encyclopedia of Mathematics, 2005, James Tanton.]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "ae9e3e9a-866e-49ce-b240-86b90b017885",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Decimal('1.414213562373095048801688724209698078569671875376948073176679737990732478462107038850387534327641572735013846230912297024924836055850737212644121497099935831413222665927505592755799950501152782060571470109559971605970274534596862014728517418640889198609552329230484308714321450839762603627995251407989687253396546331808829640620615258352395054745750287759961729835575220337531857011354374603408498847160386899970699004815030544027790316454247823068492936918621580578463111596668713013015618568987237235288509264861249497715421833420428568606014682472077143585487415565706967765372022648544701585880162075847492265722600208558446652145839889394437092659180031138824646815708263010059485870400318648034219489727829064104507263688131373985525611732204024509122770022694112757362728049573810896750401836986836845072579936472906076299694138047565482372899718032680247442062926912485905218100445984215059112024944134172853147810580360337107730918286931471017111168391658172688941975871658215212822951848847')"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "from decimal import Decimal, getcontext\n",
+    "\n",
+    "getcontext().prec = 1000\n",
+    "Decimal(2).sqrt()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ebd8a99a-8bbc-4dad-bb7e-fde57b64330a",
+   "metadata": {},
+   "source": [
+    "## Real Numbers, $\\mathbb{R}$ "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0a9ec2a7-2be7-4715-a562-d4ab879e5592",
+   "metadata": {},
+   "source": [
+    "A real number is any rational or any irrational number. Alternatively, one can define a real number to be any number that can be expressed as a decimal expansion.  The rational numbers are then those that have repeating expansions and the irrationals are those that do not.\n",
+    "\n",
+    "[From the entry for **real numbers** in the Encyclopedia of Mathematics, 2005, James Tanton.]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d703875c-7c7a-4b60-a0d0-fe79179ae669",
+   "metadata": {},
+   "source": [
+    "\n",
+    "### Integers"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "122dce20-1a34-41b1-b1d0-2a01b305b96d",
+   "metadata": {},
+   "source": [
+    "### Floats"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5bcbf0b4-f20e-4302-b8e9-bbac6460bce4",
+   "metadata": {},
+   "source": [
+    "Enter and run the ISPEED0.py program on your TI-84."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "9882a851-b78a-458b-8a07-c5431171b035",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "How high shall I count?  100000000\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Counted to 100,000,000 in 6.229 seconds.\n",
+      "Count rate was 1.605e+07 counts per second.\n"
+     ]
+    }
+   ],
+   "source": [
+    "###########################################\n",
+    "# ISPEED0.py\n",
+    "#   A simple integer-add-loop meter.\n",
+    "###########################################\n",
+    "\n",
+    "import time\n",
+    "\n",
+    "count_target = int(input('How high shall I count? '))\n",
+    "\n",
+    "start_time = time.monotonic()\n",
+    "\n",
+    "loop_count = 0\n",
+    "while loop_count < count_target:\n",
+    "    loop_count = loop_count + 1\n",
+    "\n",
+    "end_time = time.monotonic() \n",
+    "run_time = end_time - start_time\n",
+    "\n",
+    "print(\"Counted to {:,} in {:.3f} seconds.\".format(loop_count, run_time))\n",
+    "print(\"Count rate was {:.4} counts per second.\".format(loop_count/run_time))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4800f9f7-55e3-48dc-b486-43ffd3516c25",
+   "metadata": {},
+   "source": [
+    "Starting with ISPEED0.py, create a new program, ISPEED1.py, that \n",
+    "1) prompts the user for the number of seconds to run,\n",
+    "2) counts for that amount of time, and\n",
+    "3) reports the count total and the counts per second."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "48600652-8ad0-4132-a8a1-0989a426e693",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b7ddfd11-0573-4609-b499-6f6661fc3d23",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dc9a28da-6361-401f-998d-ad25d1399658",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c078f3d9-3afe-41af-a1f1-1015bb4e7e05",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
