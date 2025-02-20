@@ -1,0 +1,7 @@
+PIP_REQUIRE_VIRTUALENV=false
+
+#conda env create --file environment.yml
+conda remove --name math_and_cs --all
+
+#conda env create --prefix ./env --file environment.yml
+#conda remove --prefix ./env --all
