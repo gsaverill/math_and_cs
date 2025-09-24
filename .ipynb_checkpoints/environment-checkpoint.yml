@@ -1,0 +1,21 @@
+
+#conda env create --file environment.yaml
+#conda env create --prefix ./env --file environment.yaml
+
+name: math_and_cs
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - jupyterlab
+  - voila
+  - pandas
+  - numpy
+  - scipy
+  - tqdm
+  - matplotlib
+  - nodejs
+  - ipywidgets
+  - jupytext
+  - jupyterlab-spellchecker
+# - plotning
